@@ -20,6 +20,24 @@ public class ShippingCountryPage {
     @FindBy(xpath = "//a[.='Save & Continue']")
     WebElement submitBtn;
 
+    @FindBy(css = "#row_20")
+    WebElement link3;
+
+    @FindBy(xpath = "//span[.='United States']")
+    WebElement locationBtn;
+
+    public void setLink3(WebDriver driver){
+        BrowserUtil2.scrollWithJS(driver,link3);
+    }
+    public void setLinkToButtom(WebDriver driver){
+        BrowserUtil2.scrollWithJS(driver,link3);
+    }
+
+    public void clickLocationBtn(WebDriver driver) {
+        BrowserUtil2.clickOnElement(driver, this.locationBtn);
+    }
+
+
     public void selectCountryAndCurrency(String country, String currency){
         BrowserUtil2.selectBy(this.shippingCountry, country, "visibleText");
         BrowserUtil2.selectBy(this.currency, currency, "visibleText");
